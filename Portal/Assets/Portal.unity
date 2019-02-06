@@ -1248,7 +1248,7 @@ GameObject:
   m_Component:
   - component: {fileID: 359342513}
   m_Layer: 0
-  m_Name: Portal_B
+  m_Name: Portal_Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1281,7 +1281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 361389582}
   m_Layer: 0
-  m_Name: Portal_A_Tunnel
+  m_Name: Portal_Target_Tunnel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2694,7 +2694,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1392722730}
   m_Layer: 0
-  m_Name: Portal_B_Tunnel
+  m_Name: Portal_Source_Tunnel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3474,13 +3474,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31600d4ffbed8794fb3bf1c2216bf629, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraB: {fileID: 219505949}
-  cameraA_Tunnel: {fileID: 0}
-  cameraB_Tunnel: {fileID: 1621578502}
-  cameraMatA: {fileID: 0}
-  cameraMatB: {fileID: 2100000, guid: 32c27e8a04985124e86a10e6f7425cea, type: 2}
-  cameraMatA_Tunnel: {fileID: 2100000, guid: 3906f2edc415a42ffa667a7a275a7fe7, type: 2}
-  cameraMatB_Tunnel: {fileID: 2100000, guid: 4195fb1a20ec0496ea3a895608dfc8b3, type: 2}
+  camera_Local: {fileID: 1621578502}
+  camera_Remote: {fileID: 219505949}
+  cameraMat_Backward: {fileID: 2100000, guid: 32c27e8a04985124e86a10e6f7425cea, type: 2}
+  cameraMat_Forward: {fileID: 2100000, guid: 4195fb1a20ec0496ea3a895608dfc8b3, type: 2}
 --- !u!4 &1787570573
 Transform:
   m_ObjectHideFlags: 0
@@ -3505,7 +3502,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1795980265}
   m_Layer: 0
-  m_Name: Portal_A
+  m_Name: Portal_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

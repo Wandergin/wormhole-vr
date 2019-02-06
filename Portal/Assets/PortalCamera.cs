@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PortalCamera_B : MonoBehaviour {
+public class PortalCamera : MonoBehaviour {
 
 	public Transform playerCamera;
 	public Transform localPortal;

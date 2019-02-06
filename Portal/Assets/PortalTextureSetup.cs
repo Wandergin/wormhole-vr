@@ -4,32 +4,28 @@ using UnityEngine;
 
 public class PortalTextureSetup : MonoBehaviour {
 
-	public Camera cameraB;
-    public Camera cameraA_Tunnel;
-    public Camera cameraB_Tunnel;
+	public Camera camera_Local;
+    public Camera camera_Remote;
 
 
-	public Material cameraMatA;
-	public Material cameraMatB;
-
-    public Material cameraMatA_Tunnel;
-    public Material cameraMatB_Tunnel;
+	public Material cameraMat_Backward;
+	public Material cameraMat_Forward;
 
     // Use this for initialization
     void Start () {
-		if (cameraB.targetTexture != null)
+		if (camera_Remote.targetTexture != null)
 		{
-			cameraB.targetTexture.Release();
+            camera_Remote.targetTexture.Release();
 		}
-		cameraB.targetTexture = new RenderTexture(Screen.width, Screen.height, 24);
-		cameraMatB.mainTexture = cameraB.targetTexture;
+        camera_Remote.targetTexture = new RenderTexture(Screen.width, Screen.height, 24);
+        cameraMat_Backward.mainTexture = camera_Remote.targetTexture;
 
-        if (cameraB_Tunnel.targetTexture != null)
+        if (camera_Local.targetTexture != null)
         {
-            cameraB_Tunnel.targetTexture.Release();
+            camera_Local.targetTexture.Release();
         }
-        cameraB_Tunnel.targetTexture = new RenderTexture(Screen.width, Screen.height, 24);
-        cameraMatB_Tunnel.mainTexture = cameraB_Tunnel.targetTexture;
+        camera_Local.targetTexture = new RenderTexture(Screen.width, Screen.height, 24);
+        cameraMat_Forward.mainTexture = camera_Local.targetTexture;
     }
 	
 }
