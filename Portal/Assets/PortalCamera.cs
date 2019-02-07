@@ -12,58 +12,43 @@ public class PortalCamera : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-		
+        Vector3 playerOffsetFromSourcePortal = playerCamera.position - sourcePortal.position;
+        Vector3 playerOffsetFromSourceTunnelPortal = playerCamera.position - sourceTunnelPortal.position;
+        Vector3 playerOffsetFromTargetTunnelPortal = playerCamera.position - targetTunnelPortal.position;
+        Vector3 playerOffsetFromTargetPortal = playerCamera.position - targetPortal.position;
 
-            //if (playercamera.position)
-            Vector3 playerOffsetFromSourcePortal = playerCamera.position - sourcePortal.position;
-            Vector3 playerOffsetFromSourceTunnelPortal = playerCamera.position - sourceTunnelPortal.position;
-            Vector3 playerOffsetFromTargetTunnelPortal = playerCamera.position - targetTunnelPortal.position;
-            Vector3 playerOffsetFromTargetPortal = playerCamera.position - targetPortal.position;
+        if (System.Math.Abs(playerOffsetFromSourcePortal.x) < System.Math.Abs(playerOffsetFromSourceTunnelPortal.x))
+        {
+            //print("Player is in the real world");
 
-            if (System.Math.Abs(playerOffsetFromSourcePortal.x) < System.Math.Abs(playerOffsetFromSourceTunnelPortal.x))
+            if (this.transform.name == "Camera_Forward")
             {
-                print("Player is in the real world");
-
-                if (this.transform.name == "Camera_Forward")
-                {
-                    transform.position = sourceTunnelPortal.position + playerOffsetFromSourcePortal;
-                }
-                else if (this.transform.name == "Camera_Backward")
-                {
-                    transform.position = targetTunnelPortal.position + playerOffsetFromTargetPortal;
-                }
+                transform.position = sourceTunnelPortal.position + playerOffsetFromSourcePortal;
             }
-            else
+            else if (this.transform.name == "Camera_Backward")
             {
-                print("Player is in the tunnel");
-
-                if (this.transform.name == "Camera_Forward")
-                {
-                    transform.position = targetPortal.position + playerOffsetFromTargetTunnelPortal;
-                }
-                else if (this.transform.name == "Camera_Backward")
-                {
-                    transform.position = sourcePortal.position + playerOffsetFromSourceTunnelPortal;
-                }
+                transform.position = targetTunnelPortal.position + playerOffsetFromTargetPortal;
             }
-            //print(this.transform.name);
-            //print(playerOffsetFromLocalPortal);
-            //print(playerOffsetFromRemotePortal);
-            //transform.position = remotePortal.position + playerOffsetFromRemotePortal;
-        //else if (this.transform.name == "Camera_Remote")
-        //{
-        //    Vector3 playerOffsetFromPortal = playerCamera.position - targetPortal.position;
-        //    print(this.transform.name);
-        //    print(playerOffsetFromPortal);
-        //    transform.position = targetPortal.position + playerOffsetFromPortal;
-        //}
+        }
+        else
+        {
+            //print("Player is in the tunnel");
 
-        //float angularDifferenceBetweenPortalRotations = Quaternion.Angle(localPortal.rotation, remotePortal.rotation)+180;
+            if (this.transform.name == "Camera_Forward")
+            {
+                transform.position = targetPortal.position + playerOffsetFromTargetTunnelPortal;
+            }
+            else if (this.transform.name == "Camera_Backward")
+            {
+                transform .position = sourcePortal.position + playerOffsetFromSourceTunnelPortal;
+            }
+        }
 
-
-        //Quaternion portalRotationalDifference = Quaternion.AngleAxis(angularDifferenceBetweenPortalRotations, Vector3.up);
-        Quaternion portalRotationalDifference = Quaternion.AngleAxis(0, Vector3.up);
-		Vector3 newCameraDirection = portalRotationalDifference * playerCamera.forward;
-		transform.rotation = Quaternion.LookRotation(newCameraDirection, Vector3.up);
-	}
+        float angularDifferenceBetweenPortalRotations = Quaternion.Angle(targetPortal.rotation, sourcePortal.rotation);
+        //print("Angular difference between two portals: ");
+        //print(angularDifferenceBetweenPortalRotations);
+        Quaternion portalRotationalDifference = Quaternion.AngleAxis(angularDifferenceBetweenPortalRotations, Vector3.up);
+        Vector3 newCameraDirection = portalRotationalDifference * playerCamera.forward;
+        transform.rotation = Quaternion.LookRotation(newCameraDirection, Vector3.up);
+    }
 }
