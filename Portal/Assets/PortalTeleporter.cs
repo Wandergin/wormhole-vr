@@ -19,7 +19,7 @@ public class PortalTeleporter : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        Debug.Log(player.position);
+        //Debug.Log("hi");
 		if (playerIsOverlapping)
 		{
 			Vector3 portalToPlayer = player.position - transform.position;
