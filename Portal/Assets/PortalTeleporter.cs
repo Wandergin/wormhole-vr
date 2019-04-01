@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class PortalTeleporter : MonoBehaviour {
 
@@ -18,6 +19,7 @@ public class PortalTeleporter : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        Debug.Log(player.position);
 		if (playerIsOverlapping)
 		{
 			Vector3 portalToPlayer = player.position - transform.position;
@@ -38,10 +40,9 @@ public class PortalTeleporter : MonoBehaviour {
 
 				playerIsOverlapping = false;
             }
-           
-		}
+        }
 
-        if(player.position.y < - 10)
+        if (player.position.y < - 10)
         {
             // Respawn
             player.position = initialPosition;

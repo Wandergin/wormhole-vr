@@ -54,8 +54,6 @@ public class TunnelGenerator : MonoBehaviour
             sourcePortal.transform.rotation = Quaternion.Euler(0, player.rotation.eulerAngles.y - 180, 0);
             targetPortal.transform.rotation = Quaternion.Euler(0, player.rotation.eulerAngles.y - 180, 0);
 
-            print(player.rotation.eulerAngles - new Vector3(0,180,0));
-
             tunnelWorld.rotation = sourcePortal.transform.rotation;
 
         }

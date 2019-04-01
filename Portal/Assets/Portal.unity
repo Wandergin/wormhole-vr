@@ -965,7 +965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 555de10a985e07f47942cba70242d94f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCamera: {fileID: 22846458}
+  playerCamera: {fileID: 2070920336}
   sourcePortal: {fileID: 359342513}
   sourceTunnelPortal: {fileID: 1392722730}
   targetTunnelPortal: {fileID: 361389582}
@@ -2519,6 +2519,87 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 918925016}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &967544514
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 172182, guid: 481d68ab1d1643c468af0c48a20a93c3, type: 3}
+      propertyPath: m_Name
+      value: Unity File Debug
+      objectReference: {fileID: 0}
+    - target: {fileID: 476332, guid: 481d68ab1d1643c468af0c48a20a93c3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 476332, guid: 481d68ab1d1643c468af0c48a20a93c3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 476332, guid: 481d68ab1d1643c468af0c48a20a93c3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 476332, guid: 481d68ab1d1643c468af0c48a20a93c3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 476332, guid: 481d68ab1d1643c468af0c48a20a93c3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 476332, guid: 481d68ab1d1643c468af0c48a20a93c3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 476332, guid: 481d68ab1d1643c468af0c48a20a93c3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 476332, guid: 481d68ab1d1643c468af0c48a20a93c3, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 476332, guid: 481d68ab1d1643c468af0c48a20a93c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 476332, guid: 481d68ab1d1643c468af0c48a20a93c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 476332, guid: 481d68ab1d1643c468af0c48a20a93c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11434696, guid: 481d68ab1d1643c468af0c48a20a93c3, type: 3}
+      propertyPath: filePathFull
+      value: C:\Users\VR User\Marius\wormhole-vr\Portal\Logs\vr-wormhole.2019.04.01.01.03.10.json
+      objectReference: {fileID: 0}
+    - target: {fileID: 11434696, guid: 481d68ab1d1643c468af0c48a20a93c3, type: 3}
+      propertyPath: fileType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11434696, guid: 481d68ab1d1643c468af0c48a20a93c3, type: 3}
+      propertyPath: fileName
+      value: vr-wormhole
+      objectReference: {fileID: 0}
+    - target: {fileID: 11434696, guid: 481d68ab1d1643c468af0c48a20a93c3, type: 3}
+      propertyPath: useAbsolutePath
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11434696, guid: 481d68ab1d1643c468af0c48a20a93c3, type: 3}
+      propertyPath: filePath
+      value: C:\Users\VR User\Marius\wormhole-vr\Portal\Logs
+      objectReference: {fileID: 0}
+    - target: {fileID: 11434696, guid: 481d68ab1d1643c468af0c48a20a93c3, type: 3}
+      propertyPath: absolutePath
+      value: C:\Users\VR User\Marius\wormhole-vr\Portal\Logs
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 481d68ab1d1643c468af0c48a20a93c3, type: 3}
 --- !u!1 &1052692625
 GameObject:
   m_ObjectHideFlags: 0
@@ -3467,7 +3548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 555de10a985e07f47942cba70242d94f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCamera: {fileID: 22846458}
+  playerCamera: {fileID: 2070920336}
   sourcePortal: {fileID: 359342513}
   sourceTunnelPortal: {fileID: 1392722730}
   targetTunnelPortal: {fileID: 361389582}
@@ -3529,7 +3610,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: f3220737071ba85438bb10a2db1bbb26, type: 2}
   m_TargetDisplay: 0
-  m_TargetEye: 3
+  m_TargetEye: 1
   m_HDR: 1
   m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
@@ -3687,6 +3768,7 @@ GameObject:
   - component: {fileID: 1787570573}
   - component: {fileID: 1787570572}
   - component: {fileID: 1787570574}
+  - component: {fileID: 1787570575}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3744,6 +3826,32 @@ MonoBehaviour:
   interactUIAction:
     actionPath: /actions/default/in/InteractUI
     needsReinit: 0
+--- !u!114 &1787570575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787570571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a652ae3746818c046bf20d4fc382028a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useAbsolutePath: 1
+  fileName: MyGame
+  absolutePath: C:/Users/VR User/Marius/wormhole-vr/Portal/Logs
+  filePath: 
+  filePathFull: 
+  count: 0
 --- !u!1 &1803113856
 GameObject:
   m_ObjectHideFlags: 0

@@ -40,7 +40,7 @@ public class PortalCamera : MonoBehaviour {
             }
             else if (this.transform.name == "Camera_Backward")
             {
-                transform .position = sourcePortal.position + playerOffsetFromSourceTunnelPortal;
+                transform.position = sourcePortal.position + playerOffsetFromSourceTunnelPortal;
             }
         }
 
@@ -48,7 +48,11 @@ public class PortalCamera : MonoBehaviour {
         //print("Angular difference between two portals: ");
         //print(angularDifferenceBetweenPortalRotations);
         Quaternion portalRotationalDifference = Quaternion.AngleAxis(angularDifferenceBetweenPortalRotations, Vector3.up);
+
         Vector3 newCameraDirection = portalRotationalDifference * playerCamera.forward;
+        //newCameraDirection = new Vector3(newCameraDirection.x, newCameraDirection.y, playerCamera.rotation.z);
+        
         transform.rotation = Quaternion.LookRotation(newCameraDirection, Vector3.up);
+        transform.Rotate(0, 0, playerCamera.rotation.z);
     }
 }
