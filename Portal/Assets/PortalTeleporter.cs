@@ -12,6 +12,13 @@ public class PortalTeleporter : MonoBehaviour {
     private bool playerIsOverlapping = false;
     private Vector3 initialPosition;
 
+    // Using square magnitude in order to distinguish when the player is inside the tunnel
+    private float portalSqrMagnitudeLowerBound = 60000f;
+    private float portalSqrMagnitudeUpperBound = 68000f;
+
+    private float portalCooldown = 0.25f;
+
+
     void Start()
     {
         initialPosition = player.position;
@@ -27,22 +34,41 @@ public class PortalTeleporter : MonoBehaviour {
 
             float dotProduct = Vector3.Dot(transform.up, portalToHead);
 
-			// If this is true: The player has moved across the portal
-			if (dotProduct < 0f)
+            // If this is true: The player has moved across the portal
+            if (dotProduct < 0f)
 			{
-				// Teleport him!
-				float rotationDiff = -Quaternion.Angle(transform.rotation, reciever.rotation);
+
+                //Debug.Log(portalToHead);
+                if (reciever.name == "ColliderPlane_B_Tunnel")
+                {
+
+                    Debug.Log("Player position after teleportation: " + player.position);
+                    Debug.Log("Position x: " + player.position.x);
+                }
+
+
+                // Teleport him!
+                float rotationDiff = -Quaternion.Angle(transform.rotation, reciever.rotation);
 				rotationDiff += 180;
 				player.Rotate(Vector3.up, rotationDiff);
 
-				Vector3 positionOffset = Quaternion.Euler(0f, rotationDiff, 0f) * portalToPlayer;
-				player.position = reciever.position + positionOffset;
+				//Vector3 headPositionOffset = Quaternion.Euler(0f, rotationDiff, 0f) * portalToHead;
+                Vector3 playerPositionOffset = Quaternion.Euler(0f, rotationDiff, 0f) * portalToPlayer;
 
-				playerIsOverlapping = false;
+
+                //headCamera.position = reciever.position + headPositionOffset;
+                player.position = reciever.position + playerPositionOffset;
+
+
+                playerIsOverlapping = false;
+
+
             }
+
+   
         }
 
-        if (player.position.y < - 10)
+        if (player.position.y < - 100)
         {
             // Respawn
             player.position = initialPosition;
@@ -50,11 +76,11 @@ public class PortalTeleporter : MonoBehaviour {
         }
 	}
 
-	void OnTriggerEnter (Collider other)
+	void OnTriggerStay(Collider other)
 	{
         if (other.tag == "MainCamera")
 		{
-			playerIsOverlapping = true;
+            playerIsOverlapping = true;
 		}
 	}
 
@@ -62,7 +88,7 @@ public class PortalTeleporter : MonoBehaviour {
 	{
 		if (other.tag == "MainCamera")
 		{
-            print("Player exited collider!");
+            //print("Player exited collider!");
 		}
 	}
 }

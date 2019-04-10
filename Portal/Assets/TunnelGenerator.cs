@@ -46,7 +46,7 @@ public class TunnelGenerator : MonoBehaviour
 
 
 
-        if (getInteractUIActionLeftHand())
+        if (getInteractUIActionLeftHand() && player.position.sqrMagnitude < 60000)
         {
             targetPortal.SetActive(true);
             sourcePortal.SetActive(true);
