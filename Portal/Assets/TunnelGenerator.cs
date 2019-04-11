@@ -21,10 +21,6 @@ public class TunnelGenerator : MonoBehaviour
     {
         targetPortal.SetActive(false);
         sourcePortal.SetActive(false);
-        //GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        //cube.transform.localScale = new Vector3(4, 1, 20);
-        //cube.transform.position = new Vector3(0, 0.5f, 0);
-        //cube.transform.rotation = sourcePortal.rotation;
 
         tunnelWorld.rotation = sourcePortal.transform.rotation;
     }
@@ -43,16 +39,13 @@ public class TunnelGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
-
         if (getInteractUIActionLeftHand() && player.position.sqrMagnitude < 60000)
         {
             targetPortal.SetActive(true);
             sourcePortal.SetActive(true);
 
             Vector3 viewport = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 1.0f));
-            Vector3 viewportTarget = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 20.0f));
+            Vector3 viewportTarget = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 50.0f));
 
             sourcePortal.transform.position = new Vector3(viewport.x, 2.0f, viewport.z);
             targetPortal.transform.position = new Vector3(viewportTarget.x, 2.0f, viewportTarget.z);
@@ -61,7 +54,6 @@ public class TunnelGenerator : MonoBehaviour
             targetPortal.transform.rotation = Quaternion.Euler(0, player.rotation.eulerAngles.y - 180, 0);
 
             tunnelWorld.rotation = sourcePortal.transform.rotation;
-
         }
         else if (getInteractUIActionRightHand())
         {

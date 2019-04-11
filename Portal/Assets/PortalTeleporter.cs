@@ -27,6 +27,9 @@ public class PortalTeleporter : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
+        Debug.Log(headCamera.position.normalized);
+        Debug.Log(headCamera.rotation.eulerAngles.y);
+
 		if (playerIsOverlapping)
 		{
 			Vector3 portalToPlayer = player.position - transform.position;
@@ -37,14 +40,6 @@ public class PortalTeleporter : MonoBehaviour {
             // If this is true: The player has moved across the portal
             if (dotProduct < 0f)
 			{
-
-                //Debug.Log(portalToHead);
-                //if (reciever.name == "ColliderPlane_B_Tunnel")
-                //{
-
-                    Debug.Log("Player position after teleportation: " + player.position);
-                    Debug.Log("Position x: " + player.position.x);
-                //}
 
 
                 // Teleport him!
