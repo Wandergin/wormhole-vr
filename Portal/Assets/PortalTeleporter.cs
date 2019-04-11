@@ -39,12 +39,12 @@ public class PortalTeleporter : MonoBehaviour {
 			{
 
                 //Debug.Log(portalToHead);
-                if (reciever.name == "ColliderPlane_B_Tunnel")
-                {
+                //if (reciever.name == "ColliderPlane_B_Tunnel")
+                //{
 
                     Debug.Log("Player position after teleportation: " + player.position);
                     Debug.Log("Position x: " + player.position.x);
-                }
+                //}
 
 
                 // Teleport him!
@@ -55,9 +55,13 @@ public class PortalTeleporter : MonoBehaviour {
 				//Vector3 headPositionOffset = Quaternion.Euler(0f, rotationDiff, 0f) * portalToHead;
                 Vector3 playerPositionOffset = Quaternion.Euler(0f, rotationDiff, 0f) * portalToPlayer;
 
+                Vector3 positionToTeleport = reciever.position + playerPositionOffset;
+                if (positionToTeleport.x > -10)
+                {
+                    player.position = reciever.position + playerPositionOffset;
+                }
 
                 //headCamera.position = reciever.position + headPositionOffset;
-                player.position = reciever.position + playerPositionOffset;
 
 
                 playerIsOverlapping = false;
