@@ -1,0 +1,8 @@
+[
+{"t":"Log","tm":"2019-04-12 02:12:09","l":"Player touched Fir_Tree","s":"UnityEngine.Debug:Log(Object)\nDebug:Log(Object, DLogType) (at Assets/UnityFileDebug/Lib/Logger/Scripts/DebugWrapper.cs:53)\nBoxColliderLogger:OnTriggerEnter(Collider) (at Assets/BoxColliderLogger.cs:21)\n"},
+{"t":"Log","tm":"2019-04-12 02:12:31","l":"TELEPORTING FROM: (2.1, 2.2, 0.8) TO: (256.2, 2.0, -0.7)","s":"UnityEngine.Debug:Log(Object)\nDebug:Log(Object, DLogType) (at Assets/UnityFileDebug/Lib/Logger/Scripts/DebugWrapper.cs:53)\nPortalTeleporter:Update() (at Assets/PortalTeleporter.cs:32)\n"},
+{"t":"Log","tm":"2019-04-12 02:12:58","l":"TELEPORTING FROM: (255.9, 1.8, 0.7) TO: (1.0, 9.3, 37.6)","s":"UnityEngine.Debug:Log(Object)\nDebug:Log(Object, DLogType) (at Assets/UnityFileDebug/Lib/Logger/Scripts/DebugWrapper.cs:53)\nPortalTeleporter:Update() (at Assets/PortalTeleporter.cs:32)\n"},
+{"t":"Log","tm":"2019-04-12 02:12:58","l":"TELEPORTING FROM: (1.2, 9.2, 37.7) TO: (255.8, 2.0, 0.7)","s":"UnityEngine.Debug:Log(Object)\nDebug:Log(Object, DLogType) (at Assets/UnityFileDebug/Lib/Logger/Scripts/DebugWrapper.cs:53)\nPortalTeleporter:Update() (at Assets/PortalTeleporter.cs:32)\n"},
+{"t":"Log","tm":"2019-04-12 02:13:00","l":"TELEPORTING FROM: (256.2, 2.2, 0.8) TO: (1.0, 9.3, 37.6)","s":"UnityEngine.Debug:Log(Object)\nDebug:Log(Object, DLogType) (at Assets/UnityFileDebug/Lib/Logger/Scripts/DebugWrapper.cs:53)\nPortalTeleporter:Update() (at Assets/PortalTeleporter.cs:32)\n"},
+{"t":"Log","tm":"2019-04-12 02:13:00","l":"Player touched Palm_Tree","s":"UnityEngine.Debug:Log(Object)\nDebug:Log(Object, DLogType) (at Assets/UnityFileDebug/Lib/Logger/Scripts/DebugWrapper.cs:53)\nBoxColliderLogger:OnTriggerEnter(Collider) (at Assets/BoxColliderLogger.cs:21)\n"}
+]

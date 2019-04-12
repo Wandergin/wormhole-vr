@@ -12,13 +12,6 @@ public class PortalTeleporter : MonoBehaviour {
     private bool playerIsOverlapping = false;
     private Vector3 initialPosition;
 
-    // Using square magnitude in order to distinguish when the player is inside the tunnel
-    private float portalSqrMagnitudeLowerBound = 60000f;
-    private float portalSqrMagnitudeUpperBound = 68000f;
-
-    private float portalCooldown = 0.25f;
-
-
     void Start()
     {
         initialPosition = player.position;
@@ -27,20 +20,18 @@ public class PortalTeleporter : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-        Debug.Log(headCamera.position.normalized);
-        Debug.Log(headCamera.rotation.eulerAngles.y);
+        Debug.Log("Pos: " + headCamera.position + " Rot: " + headCamera.rotation.eulerAngles);
 
 		if (playerIsOverlapping)
 		{
 			Vector3 portalToPlayer = player.position - transform.position;
             Vector3 portalToHead = headCamera.position - transform.position;
-
             float dotProduct = Vector3.Dot(transform.up, portalToHead);
 
             // If this is true: The player has moved across the portal
-            if (dotProduct < 0f)
+            if (dotProduct < 0f && dotProduct > -5)
 			{
-
+                Debug.Log("TELEPORTING FROM: " + headCamera.position + " TO: " + reciever.position);
 
                 // Teleport him!
                 float rotationDiff = -Quaternion.Angle(transform.rotation, reciever.rotation);
@@ -56,18 +47,11 @@ public class PortalTeleporter : MonoBehaviour {
                     player.position = reciever.position + playerPositionOffset;
                 }
 
-                //headCamera.position = reciever.position + headPositionOffset;
-
-
                 playerIsOverlapping = false;
-
-
             }
-
-   
         }
 
-        if (player.position.y < - 100)
+        if (player.position.y < - 50)
         {
             // Respawn
             player.position = initialPosition;
@@ -88,6 +72,6 @@ public class PortalTeleporter : MonoBehaviour {
 		if (other.tag == "MainCamera")
 		{
             //print("Player exited collider!");
-		}
+        }
 	}
 }

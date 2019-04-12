@@ -16,7 +16,5 @@ public class PlayerTransporter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //player.position = new Vector3(headCamera.position.x, player.position.y, headCamera.position.z);
-
     }
 }

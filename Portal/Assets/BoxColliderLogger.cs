@@ -18,10 +18,6 @@ public class BoxColliderLogger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Finish")
-        {
-            Debug.Log("Player touched an object!");
-            Debug.Log(other.name);
-        }
+        Debug.Log("Player touched "+transform.name);
     }
 }
