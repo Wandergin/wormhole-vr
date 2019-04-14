@@ -113,6 +113,9 @@ public class TunnelGenerator : MonoBehaviour
             targetPortal.transform.rotation = Quaternion.Euler(0, player.rotation.eulerAngles.y - 180, 0);
 
             tunnelWorld.rotation = sourcePortal.transform.rotation;
+
+            Debug.Log("Player placed a portal, source portal pos:" + sourcePortal.transform.position + " target portal pos:" + targetPortal.transform.position);
+
         }
         else if (getInteractUIActionRightHand())
         {
