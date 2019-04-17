@@ -38,3 +38,11 @@ sysinfo.txt
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+Portal/Assets/SteamVR*
+Portal/Assets/SteamVR/*
+Portal/.vs/*
+*.ide-shm
+*.ide
+*.ide-wal
+
