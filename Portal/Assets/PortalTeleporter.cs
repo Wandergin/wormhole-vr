@@ -1,20 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class PortalTeleporter : MonoBehaviour {
 
 	public Transform player;
 	public Transform reciever;
+    public Transform headCamera;
 
-	private bool playerIsOverlapping = false;
+    private bool playerIsOverlapping = false;
+    private Vector3 initialPosition;
 
-	// Update is called once per frame
-	void Update () {
+    void Start()
+    {
+        initialPosition = player.position;
+    }
+
+    // Update is called once per frame
+    void Update () {
+
 		if (playerIsOverlapping)
 		{
 			Vector3 portalToPlayer = player.position - transform.position;
-			float dotProduct = Vector3.Dot(transform.up, portalToPlayer);
+            Vector3 portalToHead = headCamera.position - transform.position;
+
+            float dotProduct = Vector3.Dot(transform.up, portalToHead);
 
 			// If this is true: The player has moved across the portal
 			if (dotProduct < 0f)
@@ -28,13 +39,20 @@ public class PortalTeleporter : MonoBehaviour {
 				player.position = reciever.position + positionOffset;
 
 				playerIsOverlapping = false;
-			}
-		}
+            }
+        }
+
+        if (player.position.y < - 10)
+        {
+            // Respawn
+            player.position = initialPosition;
+            playerIsOverlapping = false;
+        }
 	}
 
 	void OnTriggerEnter (Collider other)
 	{
-		if (other.tag == "Player")
+        if (other.tag == "MainCamera")
 		{
 			playerIsOverlapping = true;
 		}
@@ -42,9 +60,9 @@ public class PortalTeleporter : MonoBehaviour {
 
 	void OnTriggerExit (Collider other)
 	{
-		if (other.tag == "Player")
+		if (other.tag == "MainCamera")
 		{
-			playerIsOverlapping = false;
+            print("Player exited collider!");
 		}
 	}
 }
