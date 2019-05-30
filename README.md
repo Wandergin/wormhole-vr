@@ -1,5 +1,5 @@
 Prerequisites:
-1. Windows PC (I reckon it works on Mac, but the VR setup should be painful)
+1. Windows PC (I reckon it works on Mac, but the VR setup might be painful)
 2. HTC Vive with Roomscale (that's the only hardware the project currently supports, in theory other models could work as well with some tweaks in configuration)
 
 Setup instructions: 
